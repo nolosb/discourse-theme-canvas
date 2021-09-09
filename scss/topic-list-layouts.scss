@@ -1,0 +1,57 @@
+@if $topic_list_layout == "unset" {
+  .topic-list {
+    align-items: flex-start;
+  }
+}
+
+@if $topic_list_layout == "list" {
+  .topic-list {
+    .latest-topic-list-item {
+      grid-template-columns: 4fr 1fr 1fr;
+      grid-template-areas:
+        " title posters stats "
+        " category posters stats "
+        " excerpt posters stats";
+      column-gap: 2rem;
+      padding: 1rem 10px;
+      border-bottom: 1px solid var(--primary-low);
+      .topic-excerpt {
+        padding-right: 5em;
+      }
+      .posters {
+        align-items: center;
+      }
+      .topic-stats {
+        align-items: center;
+        gap: 1em;
+      }
+    }
+  }
+}
+
+@if $topic_list_layout == "list-category-first" {
+  .topic-list {
+    .latest-topic-list-item {
+      grid-template-columns: 1fr 6fr 1fr 1fr;
+      grid-template-areas:
+        " category title posters stats "
+        " category excerpt posters stats";
+      column-gap: 2rem;
+      padding: 1rem 10px;
+      border-bottom: 1px solid var(--primary-low);
+      .topic-category-link {
+        align-items: center;
+      }
+      .topic-excerpt {
+        padding-right: 5em;
+      }
+      .posters {
+        align-items: center;
+      }
+      .topic-stats {
+        align-items: center;
+        gap: 1em;
+      }
+    }
+  }
+}

@@ -1,0 +1,101 @@
+@if $category_list_layout == "unset" {
+}
+
+@if $category_list_layout == "list" {
+  .navigation-categories .category-list {
+    grid-template-columns: 1fr;
+    .category-list-item {
+      grid-template-columns: 2fr 1fr 2fr;
+      grid-template-areas:
+        " title topics latest "
+        " description topics latest "
+        " subcategories topics latest ";
+      padding: 2rem 10px;
+      column-gap: 2rem;
+      border-bottom: 1px solid var(--primary-low);
+      .category-logo {
+        display: none;
+      }
+      .topics {
+        align-items: flex-start;
+        justify-content: flex-end;
+      }
+      .latest {
+        flex-direction: column;
+        gap: 0.5em;
+      }
+    }
+  }
+}
+
+@if $category_list_layout == "list-logo" {
+  .navigation-categories .category-list {
+    grid-template-columns: 1fr;
+    .category-list-item {
+      grid-template-columns: 1fr 3fr 2fr;
+      grid-template-areas:
+        " logo title topics "
+        " logo description latest "
+        " logo subcategories latest ";
+      padding: 2rem 10px;
+      column-gap: 2rem;
+      min-height: 150px;
+      border-bottom: 1px solid var(--primary-low);
+      .category-description {
+        padding-right: 3em;
+      }
+      .topics {
+        align-items: flex-start;
+        justify-content: flex-start;
+      }
+      .latest {
+        flex-direction: column;
+        gap: 0.5em;
+      }
+    }
+  }
+}
+
+@if $category_list_layout == "cards" {
+  .navigation-categories .category-list {
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    .category-list-item {
+      position: relative;
+      grid-template-columns: 2fr 1fr;
+      grid-template-areas:
+        " title  topics"
+        " description description "
+        " subcategories subcategories ";
+      padding: 2rem;
+      row-gap: 1rem;
+      border-radius: 10px;
+      border: 1px solid var(--primary-low);
+      &:hover {
+        background: rgba(var(--primary-rgb), 0.025);
+      }
+      .category-title-link::before {
+        content: "";
+        position: absolute;
+        z-index: 0;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+      }
+      .category-logo {
+        display: none;
+      }
+      .topics {
+        align-items: flex-start;
+        justify-content: flex-end;
+        div a {
+          padding-top: 0.3em;
+        }
+      }
+      .latest {
+        display: none;
+      }
+    }
+  }
+}

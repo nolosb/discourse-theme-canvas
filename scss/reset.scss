@@ -1,0 +1,49 @@
+%reset {
+  margin: unset;
+  padding: unset;
+  text-align: unset;
+  align-items: unset;
+  width: unset;
+  height: unset;
+  border: none;
+}
+%minreset {
+  margin: unset;
+  padding: unset;
+}
+.topic-list {
+  @extend %reset;
+  .latest-topic-list-item {
+    @extend %reset;
+    .topic-excerpt {
+      @extend %reset;
+    }
+    .topic-stats {
+      @extend %reset;
+      .num,
+      .num .badge-posts,
+      .num.activity a {
+        @extend %reset;
+      }
+    }
+  }
+}
+
+.navigation-categories .category-list {
+  @extend %reset;
+  h3,
+  .category-description,
+  .subcategories,
+  .topics,
+  .latest {
+    @extend %reset;
+  }
+  .category-logo.aspect-image {
+    @extend %minreset;
+  }
+  .latest {
+    .featured-topic {
+      @extend %reset;
+    }
+  }
+}

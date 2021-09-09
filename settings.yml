@@ -1,0 +1,15 @@
+topic_list_layout:
+  type: enum
+  default: list
+  choices:
+    - list
+    - unset
+    - list-category-first
+category_list_layout:
+  type: enum
+  default: list
+  choices:
+    - list
+    - unset
+    - list-logo
+    - cards

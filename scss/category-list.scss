@@ -1,0 +1,27 @@
+.navigation-categories .category-list {
+  margin: 2rem 0;
+  display: grid;
+  .category-list-item {
+    display: grid;
+    .category-title {
+      grid-area: title;
+    }
+    .category-logo {
+      grid-area: logo;
+    }
+    .category-description {
+      grid-area: description;
+    }
+    .subcategories {
+      grid-area: subcategories;
+    }
+    .topics {
+      grid-area: topics;
+      display: flex;
+    }
+    .latest {
+      grid-area: latest;
+      display: flex;
+    }
+  }
+}
